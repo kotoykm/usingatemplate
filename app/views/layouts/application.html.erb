@@ -10,7 +10,9 @@
     <link rel="shortcut icon" href="<%= asset_path 'icons/favicon.ico'%>" type="image/x-icon">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "main", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "noscript", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
   </head>
 
   <body class="is-preload-0 is-preload-1 is-preload-2">
@@ -20,8 +22,8 @@
 
       <!-- Header -->
       <header id="header">
-        <%=link_to 'Galería', root_path, class:"custom-titles" %>
-        <p class="mt-3">Un desafío evaluado para: <%= link_to "Desarrollo Ruby on Rails para emprendimientos de tipo Startup - Introducción a desarrollo de aplicaciones con Ruby on Rails", 'https://inforcap.desafiolab.com/', class: "fw-bold", target: "_blank"  %></p>  
+        <%=link_to "Galería", root_path, class:"custom-titles" %>
+        <p class="mt-3">Un desafío evaluado para: <%= link_to "Desarrollo Ruby on Rails para emprendimientos de tipo Startup - Introducción a desarrollo de aplicaciones con Ruby on Rails", 'https://inforcap.desafiolab.com/', class: "fst-italic" %></p>  
         <hr>
       </header>
 
@@ -29,14 +31,23 @@
 
       <footer id="footer">
         <ul class="icons">
-          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-          <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-          <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+          <%= link_to "https://twitter.com/home", class:"icon-custom" do%>
+          <li class="icon brands fa-twitter fs-4"></li>
+          <%end%>
+          <%= link_to "https://www.instagram.com/", class:"icon-custom ms-3" do%>
+          <li class="icon brands fa-instagram fs-4"></li>
+          <%end%>
+          <%= link_to "https://github.com/kotoykm", class:"icon-custom ms-3" do%>
+          <li class="icon brands fa-github fs-4"></li>
+          <%end%>
+          <%= link_to "https://mail.google.com/mail/u/0/#inbox", class:"icon-custom ms-3" do%>
+          <li class="icon fa-envelope fs-4"></li>
+          <%end%>
+
         </ul>
         <ul class="copyright">
           <li>&copy; Erick Rivera - 2023</li>
-          <li>Diseño por: <a href="http://html5up.net">HTML5 UP</a>.</li>
+          <li>Diseño por: <%= link_to "HTML5 UP", "http://html5up.net" %></li>
           <li><%= link_to "Acerca de esta galeria", acerca_de_path, class: "fw-bold" %></li>
         </ul>
       </footer>
